@@ -6,11 +6,6 @@ const campsiteRouter = express.Router();
 //all routing methods take a path as the first parameter; any http request to this path will trigger this method
 campsiteRouter
   .route("/")
-  // .all((req, res, next) => {
-  //   res.statusCode = 200;
-  //   res.setHeader("Content-Type", "text/plain");
-  //   next(); // next passes control of the routing to the next relevant routing method after this one, otherwise it would just stop here
-  // })
   .get((req, res, next) => {
     Campsite.find()
       .then((campsites) => {
